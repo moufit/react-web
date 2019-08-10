@@ -9,38 +9,31 @@ const { LatLng, LatLngBounds } = sdkTypes;
 // `predictionPlace` (util.types.place) properties.
 export default [
   {
-    id: 'default-helsinki',
+    id: 'default-dubai',
     predictionPlace: {
-      address: 'Helsinki, Finland',
-      bounds: new LatLngBounds(new LatLng(60.29783, 25.25448), new LatLng(59.92248, 24.78287)),
+      address: 'Dubai, United Arab Emirates',
+      bounds: new LatLngBounds(new LatLng(25.23437, 55.56958), new LatLng(24.90590, 54.90092)),
     },
   },
   {
-    id: 'default-turku',
+    id: 'default-abu-dhabi',
     predictionPlace: {
-      address: 'Turku, Finland',
-      bounds: new LatLngBounds(new LatLng(60.53045, 22.38197), new LatLng(60.33361, 22.06644)),
+      address: 'Abu Dhabi, United Arab Emirates',
+      bounds: new LatLngBounds(new LatLng(24.55201, 54.84937), new LatLng(24.19019, 54.28942)),
     },
   },
   {
-    id: 'default-tampere',
+    id: 'default-doha',
     predictionPlace: {
-      address: 'Tampere, Finland',
-      bounds: new LatLngBounds(new LatLng(61.83657, 24.11838), new LatLng(61.42728, 23.5422)),
+      address: 'Doha, Qatar',
+      bounds: new LatLngBounds(new LatLng(25.41292, 51.61600), new LatLng(25.17092, 51.42267)),
     },
   },
   {
-    id: 'default-oulu',
+    id: 'default-riyadh',
     predictionPlace: {
-      address: 'Oulu, Finland',
-      bounds: new LatLngBounds(new LatLng(65.56434, 26.77069), new LatLng(64.8443, 24.11494)),
-    },
-  },
-  {
-    id: 'default-ruka',
-    predictionPlace: {
-      address: 'Ruka, Finland',
-      bounds: new LatLngBounds(new LatLng(66.16997, 29.16773), new LatLng(66.16095, 29.13572)),
+      address: 'Riyadh, Saudi Arabia',
+      bounds: new LatLngBounds(new LatLng(24.88274, 46.89277), new LatLng(24.50154, 46.56126)),
     },
   },
 ];
