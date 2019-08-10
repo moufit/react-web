@@ -65,7 +65,7 @@ class DynamicMapboxMap extends Component {
 
     this.map = new window.mapboxgl.Map({
       container: this.mapContainer,
-      style: 'mapbox://styles/mapbox/streets-v10',
+      style: 'mapbox://styles/moufit/cjz51c00q0i7u1cn2mb3xrky7',
       center: position,
       zoom,
       scrollZoom: false,
