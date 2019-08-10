@@ -7,40 +7,16 @@
     <link rel="shortcut icon" href="/static/favicon.ico">
 
     <style>
-
      /**
-      * The fonts included are copyrighted by the vendor listed below.
+      * The fonts included are google fonts.
       *
-      * Vendor:      Mostardesign
-      * License URL: https://www.fontspring.com/licenses/mostardesign/webfont
       *
       */
-      @font-face {
-          font-family: 'sofiapro';
-          src: url('https://assets-sharetribecom.sharetribe.com/webfonts/sofiapro/sofiapro-medium-webfont.woff2') format('woff2'),
-               url('https://assets-sharetribecom.sharetribe.com/webfonts/sofiapro/sofiapro-medium-webfont.woff') format('woff');
-          font-weight: 500; /* Medium */
-          font-style: normal;
-      }
 
-      @font-face {
-          font-family: 'sofiapro';
-          src: url('https://assets-sharetribecom.sharetribe.com/webfonts/sofiapro/sofiapro-semibold-webfont.woff2') format('woff2'),
-               url('https://assets-sharetribecom.sharetribe.com/webfonts/sofiapro/sofiapro-semibold-webfont.woff') format('woff');
-          font-weight: 600; /* SemiBold */
-          font-style: normal;
-      }
-
-      @font-face {
-          font-family: 'sofiapro';
-          src: url('https://assets-sharetribecom.sharetribe.com/webfonts/sofiapro/sofiapro-bold-webfont.woff2') format('woff2'),
-               url('https://assets-sharetribecom.sharetribe.com/webfonts/sofiapro/sofiapro-bold-webfont.woff') format('woff');
-          font-weight: 700; /* Bold */
-          font-style: normal;
-      }
+      @import url('https://fonts.googleapis.com/css?family=Rubik:400,500,700,900&display=swap');
 
       body {
-        font-family: Helvetica, Arial, sans-serif;
+        font-family: 'Rubik', sans-serif;
         -webkit-font-smoothing: antialiased; /* http://szafranek.net/blog/2009/02/22/font-smoothing-explained/ */
         -moz-osx-font-smoothing: grayscale; /* http://szafranek.net/blog/2009/02/22/font-smoothing-explained/ */
         text-rendering: optimizeSpeed;
@@ -179,41 +155,5 @@
       <p>It might have been just a temporary issue, try refreshing the page or redo the action you were trying to do. If the issue occurs again, please contact us.</p>
       <a class="buttonLink" href="/">Go to homepage</a>
     </div>
-
-    <script>
-      (function(document){
-        // Simple font loading tracker (FOUT) for browsers that support FontFaceSet.
-        // Browsers that don't support FontFaceSet, will show only system fonts
-        if (document.fonts) {
-
-          // Check if Promise exists in window
-          var hasFeaturePromise = typeof window.Promise !== 'undefined' &&
-            typeof window.Promise.reject !== 'undefined' &&
-            Object.prototype.toString.call(Promise.resolve()) === '[object Promise]';
-
-          // Optimization for Repeated views - i.e. page refresh hits the same error
-          // If there's no Promise available, we also revert to @font-face loading
-          if (sessionStorage.fontsLoaded || !hasFeaturePromise) {
-            document.documentElement.classList.add("fontsLoaded");
-            return;
-          }
-
-          var sofiaproMedium = new FontFace('sofiapro', 'url("https://assets-sharetribecom.sharetribe.com/webfonts/sofiapro/sofiapro-medium-webfont.woff2") format("woff2"), url("https://assets-sharetribecom.sharetribe.com/webfonts/sofiapro/sofiapro-medium-webfont.woff") format("woff")', { style: 'normal', weight: '500' });
-          var sofiaproSemibold = new FontFace('sofiapro', 'url("https://assets-sharetribecom.sharetribe.com/webfonts/sofiapro/sofiapro-semibold-webfont.woff2") format("woff2"), url("https://assets-sharetribecom.sharetribe.com/webfonts/sofiapro/sofiapro-semibold-webfont.woff") format("woff")', { style: 'normal', weight: '600' });
-          var sofiaproBold = new FontFace('sofiapro', 'url("https://assets-sharetribecom.sharetribe.com/webfonts/sofiapro/sofiapro-bold-webfont.woff2") format("woff2"), url("https://assets-sharetribecom.sharetribe.com/webfonts/sofiapro/sofiapro-bold-webfont.woff") format("woff")', { style: 'normal', weight: '700' });
-
-          Promise.all([sofiaproMedium.load(), sofiaproSemibold.load(), sofiaproBold.load()])
-            .then(function(values) {
-              values.forEach(function(f) {
-                document.fonts.add(f);
-              });
-              document.documentElement.classList.add("fontsLoaded");
-
-              // Optimization for Repeat Views
-              sessionStorage.fontsLoaded = true;
-            });
-        }
-      })(document);
-    </script>
   </body>
 </html>
