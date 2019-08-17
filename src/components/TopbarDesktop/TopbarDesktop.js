@@ -24,8 +24,9 @@ const TopbarDesktop = props => {
     currentUser,
     currentPage,
     rootClassName,
-    currentUserHasListings,
-    notificationCount,
+  /*    Removed inbox & listings var for MVP
+  currentUserHasListings,
+    notificationCount, */
     intl,
     isAuthenticated,
     onLogout,
@@ -44,7 +45,8 @@ const TopbarDesktop = props => {
       initialValues={initialSearchFormValues}
     />
   );
-
+  /*
+    Removed inbox for MVP
   const notificationDot = notificationCount > 0 ? <div className={css.notificationDot} /> : null;
 
   const inboxLink = isAuthenticated ? (
@@ -59,7 +61,7 @@ const TopbarDesktop = props => {
       </span>
     </NamedLink>
   ) : null;
-
+  */
   const currentPageClass = page => {
     const isAccountSettingsPage =
       page === 'AccountSettingsPage' && ACCOUNT_SETTINGS_PAGES.includes(currentPage);
@@ -72,6 +74,8 @@ const TopbarDesktop = props => {
         <Avatar className={css.avatar} user={currentUser} disableProfileLink />
       </MenuLabel>
       <MenuContent className={css.profileMenuContent}>
+      {/*
+        Removed managed listing page for MVP
         <MenuItem key="ManageListingsPage">
           <NamedLink
             className={classNames(css.yourListingsLink, currentPageClass('ManageListingsPage'))}
@@ -81,6 +85,7 @@ const TopbarDesktop = props => {
             <FormattedMessage id="TopbarDesktop.yourListingsLink" />
           </NamedLink>
         </MenuItem>
+        */}
         <MenuItem key="ProfileSettingsPage">
           <NamedLink
             className={classNames(css.profileSettingsLink, currentPageClass('ProfileSettingsPage'))}
@@ -90,6 +95,7 @@ const TopbarDesktop = props => {
             <FormattedMessage id="TopbarDesktop.profileSettingsLink" />
           </NamedLink>
         </MenuItem>
+        {/*
         <MenuItem key="AccountSettingsPage">
           <NamedLink
             className={classNames(css.yourListingsLink, currentPageClass('AccountSettingsPage'))}
@@ -99,6 +105,7 @@ const TopbarDesktop = props => {
             <FormattedMessage id="TopbarDesktop.accountSettingsLink" />
           </NamedLink>
         </MenuItem>
+        */}
         <MenuItem key="logout">
           <InlineTextButton rootClassName={css.logoutButton} onClick={onLogout}>
             <span className={css.menuItemBorder} />
@@ -135,12 +142,15 @@ const TopbarDesktop = props => {
         />
       </NamedLink>
       {search}
+      {/*
+        removed create listing and inbox for MVP
       <NamedLink className={css.createListingLink} name="NewListingPage">
         <span className={css.createListing}>
           <FormattedMessage id="TopbarDesktop.createListing" />
         </span>
       </NamedLink>
       {inboxLink}
+      */}
       {profileMenu}
       {signupLink}
       {loginLink}
