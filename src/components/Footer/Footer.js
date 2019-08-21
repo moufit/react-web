@@ -8,7 +8,7 @@ import {
   IconSocialMediaFacebook,
   IconSocialMediaInstagram,
   IconSocialMediaTwitter,
-  Logo,
+  Badge,
   ExternalLink,
   NamedLink,
 } from '../../components';
@@ -66,7 +66,7 @@ const Footer = props => {
           <div className={css.links}>
             <div className={css.organization} id="organization">
               <NamedLink name="LandingPage" className={css.logoLink}>
-                <Logo format="desktop" className={css.logo} />
+                <Badge format="desktop" className={css.Badge} />
               </NamedLink>
               <div className={css.organizationInfo}>
                 <p className={css.organizationDescription}>

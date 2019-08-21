@@ -3,31 +3,28 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import config from '../../config';
-import IconLogo from './IconLogo';
-import LogoImage from './moufit-logo.png';
-import css from './Logo.css';
+import BadgeImage from './badge.png';
+import css from './Badge.css';
 
-const Logo = props => {
+const Badge = props => {
   const { className, format, ...rest } = props;
   const mobileClasses = classNames(css.logoMobile, className);
 
   if (format === 'desktop') {
-    return <img className={className} src={LogoImage} alt={config.siteTitle} {...rest} />;
+    return <img className={className} src={BadgeImage} alt={config.siteTitle} {...rest} />;
   }
-
-  return <IconLogo className={mobileClasses} {...rest} />;
 };
 
 const { oneOf, string } = PropTypes;
 
-Logo.defaultProps = {
+Badge.defaultProps = {
   className: null,
   format: 'desktop',
 };
 
-Logo.propTypes = {
+Badge.propTypes = {
   className: string,
   format: oneOf(['desktop', 'mobile']),
 };
 
-export default Logo;
+export default Badge;
